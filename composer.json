@@ -5,7 +5,7 @@
   "license": "MIT",
   "require": {
     "php": ">=7",
-    "guzzle-http:": "^2.5",
+    "php-http/guzzle6-adapter": "^1.1",
     "symfony/symfony": "^3",
     "sendgrid/sendgrid": "~6.0"
   },
