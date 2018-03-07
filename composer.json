@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Arthem\\Bundle\\SendGridBundle\\": ""
+      "Arthem\\Bundle\\SendgridBundle\\": ""
     }
   }
 }
