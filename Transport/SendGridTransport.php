@@ -5,8 +5,8 @@ namespace Arthem\Bundle\SendgridBundle\Transport;
 use SendGrid;
 use Swift_Events_EventListener;
 use Swift_Mime_Attachment;
-use Swift_Mime_Message;
 use Swift_Transport;
+use Swift_Mime_SimpleMessage;
 
 class SendGridTransport implements Swift_Transport
 {
@@ -57,13 +57,17 @@ class SendGridTransport implements Swift_Transport
     {
     }
 
+    public function ping()
+    {
+    }
+
     /**
-     * @param Swift_Mime_Message $message
+     * @param Swift_Mime_SimpleMessage $message
      * @param array              $failedRecipients
      *
      * @return int
      */
-    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
         $sent = 0;
         $failedRecipients = (array) $failedRecipients;
