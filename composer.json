@@ -6,7 +6,7 @@
   "require": {
     "php": ">=7",
     "php-http/guzzle6-adapter": "^1.1",
-    "symfony/symfony": "^3",
+    "symfony/symfony": "^3|^4",
     "sendgrid/sendgrid": "~6.0"
   },
   "require-dev": {
