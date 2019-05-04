@@ -4,8 +4,8 @@ namespace Arthem\Bundle\SendgridBundle\DependencyInjection;
 
 use Arthem\Bundle\SendgridBundle\Transport\SendGridTransport;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -28,7 +28,7 @@ class ArthemSendgridExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $childDefinition = new DefinitionDecorator('swiftmailer.transport.eventdispatcher.abstract');
+        $childDefinition = new ChildDefinition('swiftmailer.transport.eventdispatcher.abstract');
         $container->setDefinition('sendgrid.swift_transport.eventdispatcher', $childDefinition);
 
         $definition = $container->getDefinition(SendGridTransport::class);
